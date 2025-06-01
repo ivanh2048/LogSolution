@@ -2,13 +2,24 @@
     ViewData["Title"] = "LogSolution ERP - Dashboard";
 }
 
-<h2>Witamy w systemie LogSolution ERP</h2>
-<p>Wybierz moduł:</p>
-
-<ul>
-    <li><a asp-controller="Customer" asp-action="Index">📁 Zarządzanie klientami</a></li>
-    <li><a asp-controller="Order" asp-action="Index">📦 Zamówienia</a></li>
-    <li><a asp-controller="Warehouse" asp-action="Index">🏬 Magazyn</a></li>
-    <li><a asp-controller="Report" asp-action="Index">📊 Raporty i analiza</a></li>
-    <li><a asp-controller="User" asp-action="Index">👤 Użytkownicy i role</a></li>
-</ul>
+<div class="md3-card" style="max-width: 480px; margin: 2rem auto;">
+    <h2>Witamy w systemie LogSolution ERP</h2>
+    <p>Wybierz moduł:</p>
+    <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 1rem;">
+            <a asp-controller="Customer" asp-action="Index" class="md3-btn" style="width: 100%; display: inline-block;">📁 Zarządzanie klientami</a>
+        </li>
+        <li style="margin-bottom: 1rem;">
+            <a asp-controller="Order" asp-action="Index" class="md3-btn" style="width: 100%; display: inline-block;">📦 Zamówienia</a>
+        </li>
+        <li style="margin-bottom: 1rem;">
+            <a asp-controller="Warehouse" asp-action="Index" class="md3-btn" style="width: 100%; display: inline-block;">🏬 Magazyn</a>
+        </li>
+        <li style="margin-bottom: 1rem;">
+            <a asp-controller="Report" asp-action="Index" class="md3-btn" style="width: 100%; display: inline-block;">📊 Raporty i analiza</a>
+        </li>
+        <li>
+            <a asp-controller="User" asp-action="Index" class="md3-btn" style="width: 100%; display: inline-block;">👤 Użytkownicy i role</a>
+        </li>
+    </ul>
+</div>
