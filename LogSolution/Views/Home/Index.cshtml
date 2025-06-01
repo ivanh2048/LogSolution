@@ -1,8 +1,14 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "LogSolution ERP - Dashboard";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Witamy w systemie LogSolution ERP</h2>
+<p>Wybierz moduł:</p>
+
+<ul>
+    <li><a asp-controller="Customer" asp-action="Index">📁 Zarządzanie klientami</a></li>
+    <li><a asp-controller="Order" asp-action="Index">📦 Zamówienia</a></li>
+    <li><a asp-controller="Warehouse" asp-action="Index">🏬 Magazyn</a></li>
+    <li><a asp-controller="Report" asp-action="Index">📊 Raporty i analiza</a></li>
+    <li><a asp-controller="User" asp-action="Index">👤 Użytkownicy i role</a></li>
+</ul>
