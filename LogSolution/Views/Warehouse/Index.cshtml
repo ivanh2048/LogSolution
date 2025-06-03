@@ -1,7 +1,40 @@
-﻿@{
+﻿@model IEnumerable<LogSolution.Models.Product>
+
+@{
     ViewData["Title"] = "Magazyn";
 }
 
-<h2>🏬 Moduł magazynowy</h2>
-<p>Tu w przyszłości będzie zarządzanie stanem magazynowym i PZ/WZ.</p>
-<a asp-controller="Home" asp-action="Index">⬅️ Powrót do menu głównego</a>
+<div class="md3-card" style="max-width: 900px; margin: 2rem auto;">
+    <h2>🏬 Lista produktów w magazynie</h2>
+    <table class="table" style="width:100%; margin-top:1rem;">
+        <thead>
+            <tr>
+                <th>Nazwa produktu</th>
+                <th>Ilość</th>
+                <th>Sektor</th>
+                <th>Alejka</th>
+                <th>Rząd</th>
+                <th>Kod produktu</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var p in Model)
+            {
+                <tr>
+                    <td>@p.Name</td>
+                    <td>@p.Quantity</td>
+                    <td>@p.Sector</td>
+                    <td>@p.Alley</td>
+                    <td>@p.Row</td>
+                    <td>@p.ProductCode</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-code="@p.ProductCode" class="md3-btn" style="padding:0.25rem 1rem;">Edytuj</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+<a asp-controller="Home" asp-action="Index" class="md3-btn">⬅️ Powrót do menu głównego</a>
+    <a asp-action="Create" class="md3-btn" style="margin-bottom:1rem; display:inline-block;">➕ Dodaj nowy produkt</a>
+</div>

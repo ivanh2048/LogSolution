@@ -1,0 +1,43 @@
+@model LogSolution.Models.Product
+
+@{
+    ViewData["Title"] = "Dodaj nowy produkt";
+}
+
+<div class="md3-card" style="max-width: 480px; margin: 2rem auto;">
+    <h2>Dodaj nowy produkt</h2>
+    <form asp-action="Create" method="post">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Nazwa produktu</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Quantity" class="form-label">Ilość</label>
+            <input asp-for="Quantity" class="form-control" type="number" min="0" />
+            <span asp-validation-for="Quantity" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Sector" class="form-label">Sektor</label>
+            <input asp-for="Sector" class="form-control" />
+            <span asp-validation-for="Sector" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Alley" class="form-label">Alejka</label>
+            <input asp-for="Alley" class="form-control" />
+            <span asp-validation-for="Alley" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Row" class="form-label">Rząd</label>
+            <input asp-for="Row" class="form-control" />
+            <span asp-validation-for="Row" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ProductCode" class="form-label">Kod produktu (12 cyfr, nie zaczyna się od 0)</label>
+            <input asp-for="ProductCode" class="form-control" maxlength="12" />
+            <span asp-validation-for="ProductCode" class="text-danger"></span>
+        </div>
+        <button type="submit" class="md3-btn" style="width:100%;">Dodaj</button>
+    </form>
+    <a asp-action="Index" class="md3-btn" style="width:100%;margin-top:1rem;">⬅️ Powrót</a>
+</div>

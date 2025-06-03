@@ -1,0 +1,18 @@
+@model LogSolution.Models.Product
+
+@{
+    ViewData["Title"] = "Edytuj ilość produktu";
+}
+
+<div class="md3-card" style="max-width: 480px; margin: 2rem auto;">
+    <h2>Edytuj ilość: @Model.Name</h2>
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="ProductCode" />
+        <div class="mb-3">
+            <label asp-for="Quantity" class="form-label">Ilość</label>
+            <input asp-for="Quantity" class="form-control" />
+        </div>
+        <button type="submit" class="md3-btn" style="width:100%;">Zapisz</button>
+    </form>
+    <a asp-action="Index" class="md3-btn" style="width:100%;margin-top:1rem;">⬅️ Powrót</a>
+</div>
